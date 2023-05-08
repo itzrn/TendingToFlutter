@@ -87,6 +87,7 @@ class _ItemCardState extends State<ItemCard> {
                             children: <Widget>[
                               TextField(
                                 controller: _pName,
+                                cursorColor: Colors.green[600],
                                 cursorWidth: 2.0,
                                 decoration: InputDecoration(
                                     hintText: "PRODUCT NAME",
@@ -107,6 +108,7 @@ class _ItemCardState extends State<ItemCard> {
                               ),
                               TextField(
                                 controller: _pPrice,
+                                cursorColor: Colors.green[600],
                                 keyboardType: TextInputType.number,
                                 cursorWidth: 2.0,
                                 decoration: InputDecoration(
@@ -129,6 +131,7 @@ class _ItemCardState extends State<ItemCard> {
                               ),
                               TextField(
                                 controller: _pid,
+                                cursorColor: Colors.green[600],
                                 keyboardType: TextInputType.number,
                                 cursorWidth: 2.0,
                                 decoration: InputDecoration(
