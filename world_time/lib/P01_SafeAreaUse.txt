@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea( // safe area is use so that the design won't come in the area of notfication bar, SafeArea is used when we are not using appbar
+        child:Text("Aryan")
+        ),
+    );
+  }
+}

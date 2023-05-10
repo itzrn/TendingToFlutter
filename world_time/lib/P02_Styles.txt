@@ -1,0 +1,65 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart';
+
+class ChooseLoaction extends StatefulWidget {
+  const ChooseLoaction({super.key});
+
+  @override
+  State<ChooseLoaction> createState() => _ChooseLoactionState();
+}
+
+class _ChooseLoactionState extends State<ChooseLoaction> {
+  int counter = 0;
+  @override
+  void initState() {
+    // first initState function runs then build function runs
+    // this fires once when we load the state or object of the widget
+    super.initState();
+    print('initState function run');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // this fires every time when we load up the widget tree
+    print('build function ran');
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        backgroundColor: Colors.indigo[900],
+        title: const Text("Choose A Location"),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.indigo[900],
+
+            minimumSize: const Size(150, 60),
+
+            elevation: 25,
+
+            shadowColor: Colors.indigo[200],
+            
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)
+            ),
+
+            side: const BorderSide(
+              color: Colors.black,
+              width: 3,
+              )
+            ),
+          onPressed: () {
+            setState(() {
+              counter += 1;
+            });
+          },
+          child: Text('counter is $counter'),
+        ),
+      ),
+    );
+  }
+}

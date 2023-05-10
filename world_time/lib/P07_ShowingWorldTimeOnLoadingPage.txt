@@ -1,0 +1,43 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart';
+import 'WorldTime.dart';
+
+class Loading extends StatefulWidget {
+  const Loading({super.key});
+
+  @override
+  State<Loading> createState() => _LoadingState();
+}
+
+class _LoadingState extends State<Loading> {
+  String time = "loading";
+  void setUpWorldTime() async {
+    WorldTime instance = WorldTime(
+        location: 'Barlin', flag: 'germany.png', url: 'Europe/Berlin');
+    await instance.getTime();
+    setState(() {
+      time = instance.time;
+    });
+  }
+
+  @override
+  void initState() {
+    // first initState function runs then build function runs
+    // this fires once when we load the state or object of the widget
+    super.initState();
+    setUpWorldTime();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text("Time ---> $time"),
+        ),
+      ),
+    );
+  }
+}

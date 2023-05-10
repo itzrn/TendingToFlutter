@@ -1,0 +1,75 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart';
+
+class ChooseLoaction extends StatefulWidget {
+  const ChooseLoaction({super.key});
+
+  @override
+  State<ChooseLoaction> createState() => _ChooseLoactionState();
+}
+
+class _ChooseLoactionState extends State<ChooseLoaction> {
+  void getData() async {
+    //simulate network request for a username
+    // this await keyword makes the compiler to wait here and compiler wont't move forward for the particular duration given
+    String userName = await Future.delayed(const Duration(seconds: 2), () {
+      // this block is independent from other code in this getData function
+      return 'Asynchronous code';
+    });
+
+    // we can use await here also if we won't that the compiler wait for this part also and then move forword
+    String bio = await Future.delayed(const Duration(seconds: 2), () {
+      return "This is Aryan Here";
+    });
+
+    print("$userName - $bio");
+  }
+
+  int counter = 0;
+  @override
+  void initState() {
+    // first initState function runs then build function runs
+    // this fires once when we load the state or object of the widget
+    super.initState();
+    print('initState function run');
+    getData();
+    print("Hey this is Aryan Here, How are you"); // as the above statement is async, this line will not wait for the completion of it, but it will get execute bcz this line is outside the scope of the async block
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // this fires every time when we load up the widget tree
+    print('build function ran');
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        backgroundColor: Colors.indigo[900],
+        title: const Text("Choose A Location"),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.indigo[900],
+              minimumSize: const Size(150, 60),
+              elevation: 25,
+              shadowColor: Colors.indigo[200],
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              side: const BorderSide(
+                color: Colors.black,
+                width: 3,
+              )),
+          onPressed: () {
+            setState(() {
+              counter += 1;
+            });
+          },
+          child: Text('counter is $counter'),
+        ),
+      ),
+    );
+  }
+}
