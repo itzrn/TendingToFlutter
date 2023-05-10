@@ -1,6 +1,4 @@
-# world_time
-
-## Getting Started
+# world_time App
 
 -> This app have some of the Time Zone
 
