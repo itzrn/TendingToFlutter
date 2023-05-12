@@ -1,4 +1,4 @@
 // ignore_for_file: constant_identifier_names
 
-const MONDODB_URL = "mongodb+srv://<username>:<password>@<cluster name>.0kfe8io.mongodb.net/<Database Name>?retryWrites=true&w=majority";//use your own url
-const COLLECTION_NAME = "<Collection Name>";
+const MONDODB_URL = "mongodb+srv://itzrn:itz1234rn@cluster01.0kfe8io.mongodb.net/AutomaticCheckouts?retryWrites=true&w=majority";//use your own url
+const COLLECTION_NAME = "items";
