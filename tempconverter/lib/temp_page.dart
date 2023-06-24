@@ -93,10 +93,8 @@ class _TempPageState extends State<TempPage> {
                 height: 125.0,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const SizedBox(
-                    width: 43.0,
-                  ),
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -142,7 +140,7 @@ class _TempPageState extends State<TempPage> {
                     ),
                   ),
                   const SizedBox(
-                    width: 110.0,
+                    width: 90.0,
                   ),
                   ElevatedButton(
                     onPressed: () {
